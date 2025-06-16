@@ -36,20 +36,6 @@ main {
 }
 
 
-@-webkit-keyframes move {
-  0% {
-    top: 0px;
-  }
-
-  50% {
-    top: 15px;
-  }
-
-  100% {
-    top: 0px;
-  }
-}
-
 @keyframes move {
   0% {
     top: 0px;
@@ -76,7 +62,6 @@ main {
 
 @keyframes menu--close {
   0% {
-    opacity: 1;
     left: 0;
     display: flex;
   }
@@ -98,7 +83,8 @@ main {
 
 @keyframes modal--close {
   0% {
-    right: 0px;
+    right: 0;
+    display: block;
   }
 
   100% {
@@ -128,59 +114,59 @@ main {
 
 @media (min-width: 300px) and (max-width: 767px) {
 
-  .modal--close {
-    opacity: 0;
-    z-index: -1;
-    pointer-events: none;
-    position: absolute;
-    right: -450px;
-    animation-name: modal--close;
-    animation-timing-function: ease;
-    animation-fill-mode: backwards;
-    animation-delay: 0ms;
-    animation-duration: 0.5s;
+  .modal {
+    display: none;
+    width: calc(100vw - 320px);
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .modal--open {
-    position: absolute;
-    top: 0;
-    right: 0px;
-    z-index: 1;
-    opacity: 0.9;
-    width: calc(100% - 320px);
-    height: 100%;
-    background-color: white;
     animation-name: modal--open;
     animation-timing-function: ease;
     animation-fill-mode: backwards;
     animation-delay: 0ms;
     animation-duration: 0.5s;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
   }
 
-  .modal {
-    width: calc(100% - 320px);
+  .modal--close {
+    animation-name: modal--close;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+    animation-delay: 0ms;
+    animation-duration: 0.5s;
+    position: absolute;
+    top: 0;
+    right: -500px;
+    z-index: 1;
+    pointer-events: none;
+    overflow-x: hidden;
   }
-
 
   .menu {
     display: none;
     width: 320px;
     background-color: rgba(255, 255, 255, 1);
     flex-direction: column;
-    padding: 24px;
+    padding: 18px;
   }
 
   .menu--open {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
     animation-name: menu--open;
     animation-timing-function: ease;
     animation-fill-mode: backwards;
     animation-delay: 0ms;
     animation-duration: 0.5s;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
   }
 
   .menu--close {
@@ -189,10 +175,11 @@ main {
     animation-fill-mode: backwards;
     animation-delay: 0ms;
     animation-duration: 0.5s;
+    position: absolute;
+    top: 0;
+    left: -400px;
     z-index: 1;
     pointer-events: none;
-    position: absolute;
-    left: -400px;
   }
 
   .menu__header {
@@ -308,6 +295,17 @@ main {
     color: rgba(126, 126, 130, 1);
   }
 
+  .button--type--call {
+    background-image: url('./img/ic_call.svg');
+  }
+
+  .button--type--text {
+    background-image: url('./img/ic_chat.svg');
+  }
+
+  .button--type--account {
+    background-image: url('./img/ic_profile.svg');
+  }
 
   /* header ---------------------------------------------------------------------------------*/
 
@@ -1281,15 +1279,10 @@ main {
   }
 
   .content__button:hover>img {
-    -webkit-animation-name: move;
     animation-name: move;
-    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
-    -webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards;
-    -webkit-animation-delay: 0ms;
     animation-delay: 0ms;
-    -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;
   }
 
