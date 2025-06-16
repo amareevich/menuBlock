@@ -1,1 +1,1 @@
-https://first-block-ten.vercel.app/
+https://menu-block.vercel.app/
