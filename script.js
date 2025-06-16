@@ -1,18 +1,29 @@
-const headerDivTypeLogo = document.querySelector('.header__div--type--logo');
-
-headerDivTypeLogo.addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
     e.preventDefault();
     e.target.classList.forEach(el => {
-        if (typeof clickElement[el] === 'function') {
-            clickElement[el]();
+        if (typeof clickMenu[el] === 'function') {
+            clickMenu[el]();
         };
-    });
+
+    })
 });
 
-const clickElement = {
+const clickMenu = {
 
     'menu': document.querySelector('.menu'),
-    
-    'header__button--type--menu': function () { this.menu.classList.toggle('menu--open')}
+    'modal':document.querySelector('.modal'),
+
+    toggle() {
+        this.menu.classList.toggle('menu--open');
+        this.menu.classList.toggle('menu--close');
+        // this.modal.classList.toggle('modal--open');
+        // this.modal.classList.toggle('modal--close');
+    },
+
+    'button--type--menu': function () {this.toggle()},
+
+    'button--type--close': function () { this.toggle()},
+
+    'modal--open' : function () { this.toggle()}
 
 }
