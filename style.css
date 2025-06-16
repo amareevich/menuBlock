@@ -73,7 +73,7 @@ main {
 
 @keyframes modal--open {
   0% {
-    right: -400px;
+    right: -1000px;
   }
 
   100% {
@@ -88,7 +88,7 @@ main {
   }
 
   100% {
-    right: -450px;
+    right: -1000px;
   }
 }
 
@@ -113,6 +113,8 @@ main {
 
 
 @media (min-width: 300px) and (max-width: 767px) {
+
+  /* modal ---------------------------------------------------------------------------- */
 
   .modal {
     display: none;
@@ -148,12 +150,17 @@ main {
     overflow-x: hidden;
   }
 
+
+  /* menu --------------------------------------------------------------------------------------------- */
+
+
   .menu {
     display: none;
     width: 320px;
     background-color: rgba(255, 255, 255, 1);
     flex-direction: column;
     padding: 18px;
+    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
   }
 
   .menu--open {
@@ -166,7 +173,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
   }
 
   .menu--close {
@@ -185,7 +192,6 @@ main {
   .menu__header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
 
   .menu__a--type--logo {
@@ -197,10 +203,12 @@ main {
 
   .button--type--close {
     background-image: url('./img/burger.svg');
+    margin-right: 16px;
   }
 
   .button--type--search {
     background-image: url('./img/search.svg');
+    margin-left: 78px;
   }
 
   .menu__list {
@@ -228,7 +236,7 @@ main {
     height: 32px;
     background-color: rgba(65, 246, 215, 1);
     position: absolute;
-    left: -24px;
+    left: -20px;
     top: -4;
     border-radius: 16px;
   }
@@ -242,7 +250,7 @@ main {
   }
 
   .menu__footer {
-    margin-top: 241px;
+    margin-top: 32px;
   }
 
   .menu__button-panel {
@@ -529,47 +537,84 @@ main {
 /* TABLET MEDIA --------------------------------------------------------------------------------------- */
 @media (min-width: 767px) and (max-width: 1120px) {
 
+   /* modal ---------------------------------------------------------------------------- */
+
+  .modal {
+    display: none;
+    width: calc(100vw - 320px);
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .modal--open {
+    animation-name: modal--open;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+    animation-delay: 0ms;
+    animation-duration: 0.5s;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .modal--close {
+    animation-name: modal--close;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+    animation-delay: 0ms;
+    animation-duration: 0.5s;
+    position: absolute;
+    top: 0;
+    right: -500px;
+    z-index: 1;
+    pointer-events: none;
+    overflow-x: hidden;
+  }
+
+
+  /* menu --------------------------------------------------------------------------------------------- */
+
+
+  .menu {
+    display: none;
+    width: 320px;
+    background-color: rgba(255, 255, 255, 1);
+    flex-direction: column;
+    padding: 18px;
+    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
+  }
+
+  .menu--open {
+    animation-name: menu--open;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+    animation-delay: 0ms;
+    animation-duration: 0.5s;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
   .menu--close {
     animation-name: menu--close;
     animation-timing-function: ease;
     animation-fill-mode: backwards;
     animation-delay: 0ms;
     animation-duration: 0.5s;
-    opacity: 0;
-    z-index: -1;
-    pointer-events: none;
     position: absolute;
+    top: 0;
     left: -400px;
-    background-color: white;
-  }
-
-  .menu--open {
-    width: 320px;
-    height: 100%;
-    position: absolute;
-    left: 0;
     z-index: 1;
-    background-color: white;
-    animation-name: menu--open;
-    animation-timing-function: ease;
-    animation-fill-mode: backwards;
-    animation-delay: 0ms;
-    animation-duration: 0.5s;
-  }
-
-  .menu {
-    width: 320px;
-    background-color: rgba(255, 255, 255, 1);
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
+    pointer-events: none;
   }
 
   .menu__header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    /* gap: 118px; */
   }
 
   .menu__a--type--logo {
@@ -577,6 +622,8 @@ main {
     background-image: url('./img/Group.svg');
     width: 96.55px;
     height: 50.81px;
+    margin-right: 16px;
+    margin-left: 78px;
   }
 
   .button--type--close {
