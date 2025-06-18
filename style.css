@@ -35,7 +35,6 @@ main {
   position: relative;
 }
 
-
 @keyframes move {
   0% {
     top: 0px;
@@ -92,7 +91,6 @@ main {
   }
 }
 
-
 /* OTHER MEDIA --------------------------------------------------------------------------------------- */
 
 @media (min-width: 49px) and (max-width: 300px) {
@@ -110,7 +108,6 @@ main {
 }
 
 /* PHONE MEDIA --------------------------------------------------------------------------------------- */
-
 
 @media (min-width: 300px) and (max-width: 767px) {
 
@@ -150,9 +147,7 @@ main {
     pointer-events: none;
   }
 
-
   /* menu --------------------------------------------------------------------------------------------- */
-
 
   .menu {
     display: none;
@@ -336,13 +331,12 @@ main {
     padding: 18.59px 16px;
   }
 
-  .header__div {
+  .header__positioning-div {
     display: flex;
     align-items: center;
-    flex-shrink: 1;
   }
 
-  .header__div--type--logo {
+  .header__positioning-div--type--logo {
     gap: 16.73px;
     position: relative;
   }
@@ -362,16 +356,16 @@ main {
     display: none;
   }
 
-  .header__div--type--connection {
+  .header__positioning-div--type--connection {
     display: none;
   }
 
-  .header__div--type--status {
+  .header__positioning-div--type--status {
     justify-content: flex-end;
     gap: 16px;
   }
 
-  .header__div--type--status>span {
+  .header__positioning-div--type--status>span {
     display: none;
   }
 
@@ -455,42 +449,44 @@ main {
     opacity: 1;
   }
 
-  .content__nav {
+  .content__list {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
-    -ms-scroll-chaining: none;
-    overscroll-behavior: contain;
-    pointer-events: auto;
     scrollbar-width: none;
-    height: 40px;
   }
 
-  .content__nav>a {
+  .content__list li {
+    list-style: none;
+    border: 1px solid transparent;
+    padding: 8px 21px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+
+  .content__list li>a {
+    max-height: 40px;
     text-decoration: none;
     white-space: nowrap;
     text-align: center;
-    padding: 8px 22px;
-    transition: background-color 0.2s ease border 0.2s ease;
-    border: 1px solid #F8F8F8;
-    border-radius: 6px;
-    color: #7E7E82;
+    color: rgb(126, 126, 130);
+    text-align: center;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
   }
 
-  .content__nav>a:last-child {
+  .content__list li:last-child {
     display: none;
   }
 
-  .content__nav>a:hover {
+  .content__list li:hover {
     border: 1px solid #B8FFEC;
     background-color: white;
   }
 
-  .content__nav>a:active {
+  .content__list>a:active {
     color: #7E7E82;
   }
 
@@ -516,7 +512,7 @@ main {
     display: none;
   }
 
-  .content__textDiv>button {
+  .content__text-div>button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -525,7 +521,7 @@ main {
     background-color: #F8F8F8;
   }
 
-  .content__textDiv>button>span {
+  .content__text-div>button>span {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
@@ -533,11 +529,10 @@ main {
   }
 }
 
-
 /* TABLET MEDIA --------------------------------------------------------------------------------------- */
 @media (min-width: 767px) and (max-width: 1120px) {
 
-   /* modal ---------------------------------------------------------------------------- */
+  /* modal ---------------------------------------------------------------------------- */
 
   .modal {
     display: none;
@@ -572,9 +567,7 @@ main {
     pointer-events: none;
   }
 
-
   /* menu --------------------------------------------------------------------------------------------- */
-
 
   .menu {
     display: none;
@@ -725,7 +718,6 @@ main {
     color: rgba(126, 126, 130, 1);
   }
 
-
   /* header ---------------------------------------------------------------------------------*/
 
   .page {
@@ -747,7 +739,7 @@ main {
     gap: 16px;
   }
 
-  .header__div {
+  .header__positioning-div {
     display: flex;
     align-items: center;
   }
@@ -771,23 +763,23 @@ main {
     display: flex;
   }
 
-  .header__div--type--logo {
+  .header__positioning-div--type--logo {
     gap: 16.73px;
   }
 
-  .header__div--type--connection {
+  .header__positioning-div--type--connection {
     display: flex;
     justify-content: flex-end;
     gap: 16px;
     flex: 0 0 55%;
   }
 
-  .header__div--type--status {
+  .header__positioning-div--type--status {
     justify-content: flex-end;
     gap: 16px;
   }
 
-  .header__div--type--status>span {
+  .header__positioning-div--type--status>span {
     display: none;
   }
 
@@ -883,42 +875,44 @@ main {
     opacity: 1;
   }
 
-  .content__nav {
+  .content__list {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
-    -ms-scroll-chaining: none;
-    overscroll-behavior: contain;
-    pointer-events: auto;
     scrollbar-width: none;
-    height: 40px;
   }
 
-  .content__nav>a {
+  .content__list li {
+    list-style: none;
+    border: 1px solid transparent;
+    padding: 8px 21px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+
+  .content__list li>a {
+    max-height: 40px;
     text-decoration: none;
     white-space: nowrap;
     text-align: center;
-    padding: 8px 22px;
-    transition: background-color 0.2s ease border 0.2s ease;
-    border: 1px solid #F8F8F8;
-    border-radius: 6px;
-    color: #7E7E82;
+    color: rgb(126, 126, 130);
+    text-align: center;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
   }
 
-  .content__nav>a:last-child {
+  .content__list li:last-child {
     display: none;
   }
 
-  .content__nav>a:hover {
+  .content__list li:hover {
     border: 1px solid #B8FFEC;
     background-color: white;
   }
 
-  .content__nav>a:active {
+  .content__list>a:active {
     color: #7E7E82;
   }
 
@@ -955,7 +949,7 @@ main {
     }
   }
 
-  .content__textDiv>button {
+  .content__text-div>button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -964,7 +958,7 @@ main {
     background-color: #F8F8F8;
   }
 
-  .content__textDiv>button>span {
+  .content__text-div>button>span {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
@@ -972,12 +966,10 @@ main {
   }
 }
 
-
 /* DESKTOP MEDIA --------------------------------------------------------------------------------------- */
 @media (min-width: 1121px) {
 
   /* menu ---------------------------------------------------------------------------------- */
-
 
   .menu {
     width: 320px;
@@ -985,13 +977,13 @@ main {
     display: flex;
     flex-direction: column;
     padding: 24px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
 
   .menu__header {
     display: flex;
     gap: 118px;
   }
-
 
   .menu__a--type--logo {
     display: block;
@@ -1100,13 +1092,12 @@ main {
     color: rgba(126, 126, 130, 1);
   }
 
-
   /* header ---------------------------------------------------------------------------------*/
 
   .header {
     width: 100%;
     height: 88px;
-    max-width: 1120px;
+    max-width: 1280px;
     background-color: #F8F8F8;
     position: relative;
     display: flex;
@@ -1121,7 +1112,7 @@ main {
     padding: 18.59px 32px;
   }
 
-  .header__div {
+  .header__positioning-div {
     display: flex;
     align-items: center;
     flex-shrink: 1;
@@ -1131,16 +1122,16 @@ main {
     display: none;
   }
 
-  .header__div--type--connection {
+  .header__positioning-div--type--connection {
     display: none;
   }
 
-  .header__div--type--status {
+  .header__positioning-div--type--status {
     justify-content: flex-end;
     gap: 16px;
   }
 
-  .header__div--type--status>span {
+  .header__positioning-div--type--status>span {
     display: block;
     font-size: 16px;
     line-height: 24px;
@@ -1218,9 +1209,13 @@ main {
 
   /* content ---------------------------------------------------------------------------------*/
 
+  .page {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
   .content {
     width: 100%;
-    max-width: 1120px;
+    max-width: 1280px;
     display: flex;
     flex-direction: column;
     padding: 8px 32px;
@@ -1231,22 +1226,44 @@ main {
     display: none;
   }
 
-  .content__nav {
+  .content__list {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    height: 80px;
   }
 
-  .content__nav>a {
+  .content__list li {
+    list-style: none;
+    border: 1px solid transparent;
+    padding: 8px 22px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+
+  @media (min-width: 1120px) and (max-width: 1325px) {
+    .content__list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .content__list li {
+      width: 240px;
+      text-align: center;
+      padding: 8px 0;
+    }
+
+    .content__p--type--p1 {
+      margin-top: 10px;
+    }
+  }
+
+  .content__list li>a {
     max-height: 40px;
     text-decoration: none;
     white-space: nowrap;
     text-align: center;
-    padding: 8px 12px;
-    transition: background-color 0.2s ease border 0.2s ease;
-    border: 1px solid #F8F8F8;
-    border-radius: 6px;
     color: rgb(126, 126, 130);
     text-align: center;
     font-size: 16px;
@@ -1254,12 +1271,12 @@ main {
     letter-spacing: -0.2px;
   }
 
-  .content__nav>a:hover {
+  .content__list>li:hover {
     border: 1px solid #B8FFEC;
     background-color: white;
   }
 
-  .content__nav>a:active {
+  .content__list>li a:active {
     color: #7E7E82;
   }
 
@@ -1281,15 +1298,17 @@ main {
     font-weight: 400;
   }
 
-  .content__p--type--p1 {
-    margin-top: 29px;
+  @media (min-width: 1326px) {
+    .content__p--type--p1 {
+      margin-top: 40px;
+    }
   }
 
   .content__p--type--p2 {
     margin-top: 16px;
   }
 
-  .content__textDiv>button {
+  .content__text-div>button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1299,7 +1318,7 @@ main {
     cursor: pointer;
   }
 
-  .content__textDiv>button>span {
+  .content__text-div>button>span {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
@@ -1308,6 +1327,10 @@ main {
   }
 
   @media (max-width: 1221px) {
+
+    .content__p--type--p1 {
+      margin-top: 60px;
+    }
 
     .content__p--type--p2 {
       display: none;
