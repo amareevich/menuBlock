@@ -8,6 +8,21 @@
     <title>page__1</title>
 </head>
 
+<!-- Сделай плиз хостинг у след заданий на гитхаб пейджес
+Не помню в прошлый раз включал впн или нет, но конкретно сейчас без впн вообще не открывается, с впн очнеь долго грузил
+Когда декстоп, явно есть место справа под отзывы, но пункт все равно на нововй строке, новая строка только если не входит по ширине - включай голову, а гне делай лишь бы попасть в макет ;)
+https://github.com/amareevich/firstBlock/blob/main/style.css#L99 - хедер__див - это не бэм, смысл бэм в том, чтобы давай осмысленные именна, внутри хедера может быть куча дивов. След будешь давать див-1 див-2?
+https://github.com/amareevich/firstBlock/blob/main/index.html#L15 - не нужно делать эти поустые строки
+https://github.com/amareevich/firstBlock/blob/main/index.html#L18 - header__a header_a-services - 1 элемент, а второе что? Снизу еще черту пропустил? Просто вижу дальше еще тоже самое, как будто не похоже на опечатку
+https://github.com/amareevich/firstBlock/blob/main/index.html#L34. - эта кнопка - это блок, а не элемент, в след блоке можно ее не вернстать, а просто использовать уже готовый блок
+https://github.com/amareevich/firstBlock/blob/main/index.html#L63. оберни ссылки в список
+Для первого рзаа ок, пофикси обязательно, ниаче в 1.6 отправлю переделывать ;)
+Записывайся на ревью и сдавай след задачу -->
+
+<!-- Стили исправил, сделал на 1120 flex-wrap и задал фиксированный width для li чтобы justify-content: space between выглядело эстетичней), 
+ увеличил max-width до 1280 вместо 1120, чтобы элементы с padding:22px по макету вмещались в 1 строку, хотя выглядеть, как по мне, все стало хуже.
+ Так же если менять padding, то тогда все слишком слипается и выглядит совсем плохо-->
+
 <body>
     <main>
         <section class="menu">
@@ -44,10 +59,14 @@
             </footer>
         </section>
         <section class="page">
+            <!-- Убрал все пробелы между тегами -->
             <header class="header">
                 <nav class="header__nav nav-top">
+                    <!-- заменил header-div на  header__positioning-div-->
                     <div class="header__positioning-div header__positioning-div--type--logo">
+                        <!-- заменил header__a header_a-services на  header__a--type--services-->
                         <a href="#" class="header__a header__a--type--services">Услуги и сервисы</a>
+                        <!-- Ввел блок для button, было header__button -->
                         <button class="button button--type--menu" href="#" aria-label="меню"></button>
                         <div class="header__separator header__separator--type--first">&nbsp;</div>
                         <a href="#" class="header__a header__a--type--logo"></a>
@@ -71,6 +90,7 @@
             <section class="content">
                 <h1>Услуги и сервисы</h1>
                 <nav class="content__nav">
+                    <!-- Добавил в nav ul>li, был просто nav>a -->
                     <ul class="content__list">
                         <li><a href="#">Ремонтируемые бренды</a></li>
                         <li><a href="#"> Ремонтируемые устройства</a></li>
