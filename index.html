@@ -5,126 +5,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>page__1</title>
+    <title>page__5</title>
 </head>
 
-<!-- Сделай плиз хостинг у след заданий на гитхаб пейджес
-Не помню в прошлый раз включал впн или нет, но конкретно сейчас без впн вообще не открывается, с впн очнеь долго грузил
-Когда декстоп, явно есть место справа под отзывы, но пункт все равно на нововй строке, новая строка только если не входит по ширине - включай голову, а гне делай лишь бы попасть в макет ;)
-https://github.com/amareevich/firstBlock/blob/main/style.css#L99 - хедер__див - это не бэм, смысл бэм в том, чтобы давай осмысленные именна, внутри хедера может быть куча дивов. След будешь давать див-1 див-2?
-https://github.com/amareevich/firstBlock/blob/main/index.html#L15 - не нужно делать эти поустые строки
-https://github.com/amareevich/firstBlock/blob/main/index.html#L18 - header__a header_a-services - 1 элемент, а второе что? Снизу еще черту пропустил? Просто вижу дальше еще тоже самое, как будто не похоже на опечатку
-https://github.com/amareevich/firstBlock/blob/main/index.html#L34. - эта кнопка - это блок, а не элемент, в след блоке можно ее не вернстать, а просто использовать уже готовый блок
-https://github.com/amareevich/firstBlock/blob/main/index.html#L63. оберни ссылки в список
-Для первого рзаа ок, пофикси обязательно, ниаче в 1.6 отправлю переделывать ;)
-Записывайся на ревью и сдавай след задачу -->
-
-<!-- Стили исправил, сделал на 1120 flex-wrap и задал фиксированный width для li чтобы justify-content: space between выглядело эстетичней), 
- увеличил max-width до 1280 вместо 1120, чтобы элементы с padding:22px по макету вмещались в 1 строку, хотя выглядеть, как по мне, все стало хуже.
- Так же если менять padding, то тогда все слишком слипается и выглядит совсем плохо. Остальные комментарии с правками в коде HTML-->
-
 <body>
-    <main>
-        <section class="menu">
+    <main class="page">
+        <section class="page__modal"></section>
+        <section class="page__menu menu">
             <header class="menu__header">
-                <button class="button button--type--close"></button>
-                <a href="#" class="menu__a menu__a--type--logo"></a>
-                <button class="button button--type--search"></button>
+                <ul class="list menu__list--type--header">
+                    <li class="list__item">
+                        <button class="button button--type--close"></button>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="logo"></a>
+                    </li>
+                    <li class="list__item">
+                        <button class="button button--type--search"></button>
+                    </li>
+                </ul>
             </header>
-            <ul class="menu__list">
-                <li class="menu__li"><a href="#">Ремонт техники</a></li>
-                <li class="menu__li"><a href="#">Услуги и сервисы</a></li>
-                <li class="menu__li"><a href="#">Корпоративным клиентам</a></li>
-                <li class="menu__li"><a href="#">Продавцам техники</a></li>
-                <li class="menu__li"><a href="#">Партнерам</a></li>
-                <li class="menu__li"><a href="#">Производителям</a></li>
-                <li class="menu__li"><a href="#">Наши сервисные центры</a></li>
-                <li class="menu__li"><a href="#">Контакты</a></li>
-            </ul>
+            <nav class="menu__navigation">
+                <ul class="list menu__list--type--navigation">
+                    <li class="list__item"><a href="#">Ремонт техники</a></li>
+                    <li class="list__item"><a href="#">Услуги и сервисы</a></li>
+                    <li class="list__item"><a href="#">Корпоративным клиентам</a></li>
+                    <li class="list__item"><a href="#">Продавцам техники</a></li>
+                    <li class="list__item"><a href="#">Партнерам</a></li>
+                    <li class="list__item"><a href="#">Производителям</a></li>
+                    <li class="list__item"><a href="#">Наши сервисные центры</a></li>
+                    <li class="list__item"><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
             <footer class="menu__footer">
-                <div class="menu__button-panel">
-                    <button class="button button--type--call"></button>
-                    <button class="button button--type--text"></button>
-                    <button class="button button--type--account "></button>
-                </div>
-                <div class="menu__contact">
-                    <p class="menu__mail">mail@cps.com</p>
-                    <p class="menu__phone">8 800 890 8900</p>
-                </div>
-                <div class="menu__langue">
-                    <p>RU</p>
-                    <p>EN</p>
-                    <p>CH</p>
-                </div>
+                <ul class="list menu__list--type--top-footer">
+                    <li class="list__item">
+                        <button class="button button--type--call"></button>
+                    </li>
+                    <li class="list__item">
+                        <button class="button button--type--text"></button>
+                    </li>
+                    <li class="list__item">
+                        <button class="button button--type--account "></button>
+                    </li>
+                </ul>
+                <address class="menu__address">
+                    <ul class="list menu__list--type--address">
+                        <li class="list__item">
+                            <a href="#">mail@cps.com</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="#">8 800 890 8900</a>
+                        </li>
+                    </ul>
+                </address>
+                <ul class="list menu__list--type--bottom--footer">
+                    <li class="list__item">
+                        <button>RU</button>
+                    </li>
+                    <li class="list__item">
+                        <button>EN</button>
+                    </li>
+                    <li class="list__item">
+                        <button>CH</button>
+                    </li>
+                </ul>
             </footer>
         </section>
-        <section class="page">
-            <!-- Убрал все пробелы между тегами -->
-            <header class="header">
-                <nav class="header__nav nav-top">
-                    <!-- заменил header-div на  header__positioning-div-->
-                    <div class="header__positioning-div header__positioning-div--type--logo">
-                        <!-- заменил header__a header_a-services на  header__a--type--services-->
-                        <a href="#" class="header__a header__a--type--services">Услуги и сервисы</a>
-                        <!-- Ввел блок для button, было header__button -->
-                        <button class="button button--type--menu" href="#" aria-label="меню"></button>
-                        <div class="header__separator header__separator--type--first">&nbsp;</div>
-                        <a href="#" class="header__a header__a--type--logo"></a>
-                    </div>
-                    <div class="header__separator header__separator--type--midlle">&nbsp;</div>
-                    <div class="header__positioning-div header__positioning-div--type--connection">
-                        <button class="button button--type--call" href="#" aria-label="позвонить"></button>
-                        <button class="button button--type--text" aria-label="отправить сообщение"></button>
-                        <button class="button button--type--account" href="#" aria-label="профиль"></button>
-                    </div>
-                    <div class="header__separator header__separator--type--last">&nbsp;</div>
-                    <div class="header__positioning-div header__positioning-div--type--status">
-                        <span>Оставить заявку</span>
-                        <button class="button button--type--application" href="#"
-                            aria-label="отправить заявку"></button>
-                        <span>Статус ремонта</span>
-                        <button class="button button--type--status" href="#" aria-label="статус заявки"></button>
-                    </div>
-                </nav>
-            </header>
-            <section class="content">
-                <h1>Услуги и сервисы</h1>
-                <nav class="content__nav">
-                    <!-- Добавил в nav ul>li, был просто nav>a -->
-                    <ul class="content__list">
-                        <li><a href="#">Ремонтируемые бренды</a></li>
-                        <li><a href="#"> Ремонтируемые устройства</a></li>
-                        <li><a href="#">Цены на услуги</a></li>
-                        <li><a href="#">Адреса сервисных центров</a></li>
-                        <li><a href="#">Специальные цены</a></li>
-                        <li><a href="#">Отзывы</a></li>
+        <section class="page__container container">
+            <header class="container__header">
+                <nav class="container__navigation--type--header">
+                    <ul class="list container__list--type--logo">
+                        <li class="list__item">
+                            <a href="#">Услуги и сервисы</a>
+                        </li>
+                        <li class="list__item">
+                            <button class="button button--type--menu" aria-label="меню"></button>
+                        </li>
+                        <div class="separator container__separator--type--first">&nbsp;</div>
+
+                        <li class="list__item">
+                            <a href="/" class="logo"></a>
+                        </li>
+                    </ul>
+                    <div class="separator container__separator--type--middle">&nbsp;</div>
+                    <ul class="list container__list--type--connection">
+                        <li class="list__item">
+                            <button class="button button--type--call" href="#" aria-label="позвонить"></button>
+                        </li>
+                        <li class="list__item">
+                            <button class="button button--type--text" aria-label="отправить сообщение"></button>
+                        </li>
+                        <li class="list__item">
+                            <button class="button button--type--account" href="#" aria-label="профиль"></button>
+                        </li>
+                    </ul>
+                    <div class="separator container__separator--type--last">&nbsp;</div>
+                    <ul class="list container__list--type--status">
+                        <li class="list__item">
+                            <span>Оставить заявку</span>
+                            <button class="button button--type--application" href="#"
+                                    aria-label="создать заявку"></button>
+                        </li>
+                        <li class="list__item">
+                            <span>Статус ремонта</span>
+                            <button class="button button--type--status" href="#" aria-label="статус заявки"></button>
+                        </li>
                     </ul>
                 </nav>
-                <article class="content__article">
-                    <div class="content__text-div">
-                        <p class="content__p content__p--type--p1">
+            </header>
+            <section class="container__about">
+                <h1>Услуги и сервисы</h1>
+                <nav class="container__navigation--type--about">
+                    <ul class="list container__list--type--about">
+                        <li class="list__item"><a href="#">Ремонтируемые бренды</a></li>
+                        <li class="list__item"><a href="#"> Ремонтируемые устройства</a></li>
+                        <li class="list__item"><a href="#">Цены на услуги</a></li>
+                        <li class="list__item"><a href="#">Адреса сервисных центров</a></li>
+                        <li class="list__item"><a href="#">Специальные цены</a></li>
+                        <li class="list__item"><a href="#">Отзывы</a></li>
+                    </ul>
+                </nav>
+                <article class="container__article--type--about">
+                    <div class="article__text">
+                        <p class="article__p--type--p-top">
                             Мы являемся авторизованным сервисным центром по ремонту техники Dell.
                             Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией
                             производителя.
                         </p>
-                        <p class="content__p content__p--type--p2">
+                        <p class="article__p--type--p-bottom">
                             Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера,
                             что подтверждает большое количество постоянных клиентов.
                             Мы гордимся тем, что к нам обращаются по рекомендациям и,
                             в свою очередь, советуют нас родным и близким.
                         </p>
-                        <button class="content__button">
-                            <img src="./img/ic_expand.svg">
+                        <button class="unwrap-btn unwrap-btn--action--open unwrap-btn--type--article">
+                            <img src="./unwrap/unwrap_images/unwrap.svg">
                             <span>Читать далее</span>
                         </button>
-                    </div>
-                    <img src="./img/Picture Copy.svg" alt="Information signage" class="content__img">
+                    </div> 
+                    <img src="./img/Picture Copy.svg" alt="Information signage" class="article__img">
                 </article>
             </section>
         </section>
-        <section class="modal"></section>
     </main>
-    <script type="module" src="./script.js"></script>
+    <script type="module" src="./dist/main.js"></script>
 </body>
 
 </html>

@@ -1,33 +1,29 @@
-document.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.target.classList.forEach(el => {
-        if (typeof clickMenu[el] === 'function') {
-            clickMenu[el]();
-        };
-    });
-});
+import menu__action from './menu/menu.js';
 
-const clickMenu = {
+document.addEventListener('DOMContentLoaded', async () => {
+    let flag__module__swiper = false;
+    let flag__module__desktop = false;
+    let module__swiper;
+    let module__desktop;
 
-    'menu': document.querySelector('.menu'),
-    'modal':document.querySelector('.modal'),
+    async function setListener() {
 
-    toggle() {
-        if (this.menu.classList.contains('menu--open') || this.menu.classList.contains('menu--close')) {
-            this.menu.classList.toggle('menu--close');
-            this.menu.classList.toggle('menu--open');
-            this.modal.classList.toggle('modal--open');
-            this.modal.classList.toggle('modal--close')
-        } else {
-            this.menu.classList.toggle('menu--open');
-            this.modal.classList.toggle('modal--open');
-        };
-    },
+        if (window.innerWidth < 767 && flag__module__swiper === false) {
+            module__desktop ? module__desktop.destroy() : null;
+            flag__module__desktop = false;
+            flag__module__swiper = true;
+            module__swiper = (await (import('./brends/swiper.js'))).default();
 
-    'button--type--menu': function () {this.toggle()},
+        } else if (window.innerWidth > 767 && flag__module__desktop === false) {
+            module__swiper ? module__swiper.destroy() : null;
+            flag__module__swiper = false;
+            flag__module__desktop = true;
+            module__desktop = (await (import('./brends/view_element.js'))).default();
+        }
+    }
 
-    'button--type--close': function () { this.toggle()},
+    setListener();
+    menu__action();
+    window.addEventListener('resize', setListener);
+})
 
-    'modal--open' : function () { this.toggle()}
-
-}
